@@ -23,6 +23,7 @@ public class CurrencyExchangeEntity {
 	@JsonProperty("to")
 	String toCurrency;
 
+
 	public CurrencyExchangeEntity(Long id, Long exchangeRate,
 			@Size(min = 2, message = "fromCurrency should be atleast 2 characters") String fromCurrency,
 			@Size(min = 2, message = "toCurrency should be atleast 2 characters") String toCurrency) {
@@ -45,12 +46,12 @@ public class CurrencyExchangeEntity {
 		this.id = id;
 	}
 
-	public Long getExchangeRate() {
+	public Long getConverstionMultiple() {
 		return converstionMultiple;
 	}
 
-	public void setExchangeRate(Long exchangeRate) {
-		this.converstionMultiple = exchangeRate;
+	public void setConverstionMultiple(Long converstionMultiple) {
+		this.converstionMultiple = converstionMultiple;
 	}
 
 	public String getFromCurrency() {
