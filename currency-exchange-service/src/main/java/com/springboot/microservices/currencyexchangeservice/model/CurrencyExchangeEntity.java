@@ -22,15 +22,19 @@ public class CurrencyExchangeEntity {
 	@Size(min = 2, message = "toCurrency should be atleast 2 characters")
 	@JsonProperty("to")
 	String toCurrency;
+	
+	String environment;
 
-	public CurrencyExchangeEntity(Long id, Long exchangeRate,
+
+	public CurrencyExchangeEntity( Long exchangeRate,
 			@Size(min = 2, message = "fromCurrency should be atleast 2 characters") String fromCurrency,
-			@Size(min = 2, message = "toCurrency should be atleast 2 characters") String toCurrency) {
+			@Size(min = 2, message = "toCurrency should be atleast 2 characters") String toCurrency,
+			String environment) {
 		super();
-		this.id = id;
 		this.converstionMultiple = exchangeRate;
 		this.fromCurrency = fromCurrency;
 		this.toCurrency = toCurrency;
+		this.environment = environment;
 	}
 	
 	public CurrencyExchangeEntity() {
@@ -45,12 +49,12 @@ public class CurrencyExchangeEntity {
 		this.id = id;
 	}
 
-	public Long getExchangeRate() {
+	public Long getConverstionMultiple() {
 		return converstionMultiple;
 	}
 
-	public void setExchangeRate(Long exchangeRate) {
-		this.converstionMultiple = exchangeRate;
+	public void setConverstionMultiple(Long converstionMultiple) {
+		this.converstionMultiple = converstionMultiple;
 	}
 
 	public String getFromCurrency() {
@@ -67,6 +71,14 @@ public class CurrencyExchangeEntity {
 
 	public void setToCurrency(String toCurrency) {
 		this.toCurrency = toCurrency;
+	}
+
+	public String getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
 	}
 
 	
