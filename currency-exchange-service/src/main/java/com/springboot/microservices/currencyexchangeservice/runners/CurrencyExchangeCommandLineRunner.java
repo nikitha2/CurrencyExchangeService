@@ -26,7 +26,7 @@ public class CurrencyExchangeCommandLineRunner implements CommandLineRunner {
 		currencyExchangeRepository.save(new CurrencyExchangeEntity(65L,"USD","INR","TEST"));
 		currencyExchangeRepository.save(new CurrencyExchangeEntity(80L,"EUR","INR","TEST"));
 		currencyExchangeRepository.save(new CurrencyExchangeEntity(23L,"AUS","INR","TEST"));
-		
+		System.out.println("----------------------DB populated --------------------------");
 	}
 
 }

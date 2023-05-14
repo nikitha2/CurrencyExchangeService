@@ -25,8 +25,7 @@ public class CurrencyExchangeEntity {
 	
 	String environment;
 
-
-	public CurrencyExchangeEntity( Long exchangeRate,
+	public CurrencyExchangeEntity(Long exchangeRate,
 			@Size(min = 2, message = "fromCurrency should be atleast 2 characters") String fromCurrency,
 			@Size(min = 2, message = "toCurrency should be atleast 2 characters") String toCurrency,
 			String environment) {
