@@ -9,7 +9,7 @@ import com.springboot.microservices.currencyexchangeservice.model.CurrencyExchan
 @Component
 public interface CurrencyExchangeRepository extends JpaRepository<CurrencyExchangeEntity, Long> {
 	
-	public List<CurrencyExchangeEntity> findByFromCurrencyAndToCurrency(String fromCurrency, String toCurrency);
+	public CurrencyExchangeEntity findByFromCurrencyAndToCurrency(String fromCurrency, String toCurrency);
 	
 	public List<CurrencyExchangeEntity> findByFromCurrency(String fromCurrency);
 

@@ -1,5 +1,7 @@
 package com.springboot.microservices.currencyexchangeservice.model;
 
+import java.math.BigDecimal;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;
@@ -13,7 +15,7 @@ public class CurrencyExchangeEntity {
 	@GeneratedValue
 	Long id;
 	
-	Long converstionMultiple;
+	private BigDecimal conversionMultiple;
 	
 	@Size(min = 2, message = "fromCurrency should be atleast 2 characters")
 	@JsonProperty("from")
@@ -25,12 +27,12 @@ public class CurrencyExchangeEntity {
 	
 	String environment;
 
-	public CurrencyExchangeEntity(Long exchangeRate,
+	public CurrencyExchangeEntity(BigDecimal conversionMultiple,
 			@Size(min = 2, message = "fromCurrency should be atleast 2 characters") String fromCurrency,
 			@Size(min = 2, message = "toCurrency should be atleast 2 characters") String toCurrency,
 			String environment) {
 		super();
-		this.converstionMultiple = exchangeRate;
+		this.conversionMultiple = conversionMultiple;
 		this.fromCurrency = fromCurrency;
 		this.toCurrency = toCurrency;
 		this.environment = environment;
@@ -48,12 +50,12 @@ public class CurrencyExchangeEntity {
 		this.id = id;
 	}
 
-	public Long getConverstionMultiple() {
-		return converstionMultiple;
+	public BigDecimal getConversionMultiple() {
+		return conversionMultiple;
 	}
 
-	public void setConverstionMultiple(Long converstionMultiple) {
-		this.converstionMultiple = converstionMultiple;
+	public void setConversionMultiple(BigDecimal conversionMultiple) {
+		this.conversionMultiple = conversionMultiple;
 	}
 
 	public String getFromCurrency() {

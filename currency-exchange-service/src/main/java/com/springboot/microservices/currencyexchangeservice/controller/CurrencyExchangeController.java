@@ -20,7 +20,7 @@ public class CurrencyExchangeController {
 	private DbConfiguration dbConfiguration;
 	
 	@GetMapping("/currency-exchange/from/{fromCurrency}/to/{toCurrency}")
-	public List<CurrencyExchangeEntity> findByFromCurrencyAndToCurrency(@PathVariable String fromCurrency, @PathVariable String toCurrency){
+	public CurrencyExchangeEntity findByFromCurrencyAndToCurrency(@PathVariable String fromCurrency, @PathVariable String toCurrency){
 		return currencyExchangeDaoService.findByFromCurrencyAndToCurrency(fromCurrency, toCurrency);
 	}
 	

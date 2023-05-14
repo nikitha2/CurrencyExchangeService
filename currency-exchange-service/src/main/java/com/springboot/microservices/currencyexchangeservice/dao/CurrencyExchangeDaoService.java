@@ -16,14 +16,11 @@ public class CurrencyExchangeDaoService {
 	@Autowired
 	private Environment environment;
 	
-	public List<CurrencyExchangeEntity> findByFromCurrencyAndToCurrency(String fromCurrency, String toCurrency){
-		List<CurrencyExchangeEntity>  currencyExchangeEntitys = currencyExchangeRepository.findByFromCurrencyAndToCurrency(fromCurrency, toCurrency);
-
-		currencyExchangeEntitys.forEach( currencyExchangeEntity ->
-				currencyExchangeEntity.setEnvironment(environment.getProperty("local.server.port"))
-		);
+	public CurrencyExchangeEntity findByFromCurrencyAndToCurrency(String fromCurrency, String toCurrency){
+		CurrencyExchangeEntity currencyExchangeEntity = currencyExchangeRepository.findByFromCurrencyAndToCurrency(fromCurrency, toCurrency);
+        currencyExchangeEntity.setEnvironment(environment.getProperty("local.server.port"));
 		
-		return currencyExchangeEntitys;
+		return currencyExchangeEntity;
 		
 	}
 	

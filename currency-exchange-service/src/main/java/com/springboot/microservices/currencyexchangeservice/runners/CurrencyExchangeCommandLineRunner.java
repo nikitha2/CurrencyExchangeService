@@ -1,5 +1,7 @@
 package com.springboot.microservices.currencyexchangeservice.runners;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -23,9 +25,9 @@ public class CurrencyExchangeCommandLineRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		// Perform insert
-		currencyExchangeRepository.save(new CurrencyExchangeEntity(65L,"USD","INR","TEST"));
-		currencyExchangeRepository.save(new CurrencyExchangeEntity(80L,"EUR","INR","TEST"));
-		currencyExchangeRepository.save(new CurrencyExchangeEntity(23L,"AUS","INR","TEST"));
+		currencyExchangeRepository.save(new CurrencyExchangeEntity(new BigDecimal(65),"USD","INR","TEST"));
+		currencyExchangeRepository.save(new CurrencyExchangeEntity(new BigDecimal(80),"EUR","INR","TEST"));
+		currencyExchangeRepository.save(new CurrencyExchangeEntity(new BigDecimal(23),"AUS","INR","TEST"));
 		System.out.println("----------------------DB populated --------------------------");
 	}
 
